@@ -1,0 +1,140 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Add</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Edit
+          </a>
+         
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <div class="input-group">
+            
+            <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        </form>
+      </nav>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <h1>ANGULAR + ASP.NET CORE</h1>
+<div>
+  
+</div>
+<div class="contacts-container">
+
+  <div class="contacts-form">
+    <form #form="ngForm"(ngSubmit)="onSubmit()" >
+      <div class="form-group">
+
+        <label for="">First Name</label>
+        <input type="text" name="FirstName" [(ngModel)]="contact.firstName">
+      
+      </div>
+
+      <div class="form-group">
+
+        <label for="">Last Name</label>
+        <input type="text" name="LastName" [(ngModel)]="contact.lastName">
+      
+      </div>
+      <div class="form-group">
+
+        <label for="">Email</label>
+        <input type="text" name="email"[(ngModel)]="contact.email">
+      
+      </div>
+      <div class="form-group">
+
+        <label for="">Contact</label>
+        <input type="text" name="contact"[(ngModel)]="contact.contact">
+      
+      </div>
+      <!-- <div class="form-group">
+
+        <label for="">Address</label>
+        <input type="text" name="address"[(ngModel)]="contact.address">
+      
+      </div> -->
+      <div class="form-group">
+
+        <label for="">CITY</label>
+        <input type="text" name="city"[(ngModel)]="contact.city">
+      
+      </div>
+      <div class="form-group">
+
+        <label for="">State</label>
+        <input type="text" name="State"[(ngModel)]="contact.state">
+      
+      </div>
+      <!-- <div class="form-group">
+
+        <label for="">Pincode</label>
+        <input type="text" name="pincode" [(ngModel)]="contact.pincode">
+      
+      </div> -->
+      <div class="form-group">
+
+        <button>Save</button>
+      </div>
+
+
+
+
+    </form>
+      
+  </div>
+  
+  
+<div class="contacts-grid">
+  
+<div class="contacts-row" *ngFor="let contacts of contacts" >
+  <div class="contacts-row-details"(click)="populateForm(contacts)">
+   <div>
+    <div>
+      <div class="con">
+        <a ><i class="fa-sharp fa-solid fa-edit"></i></a>
+      </div>
+    </div>
+   </div>
+    <span>{{contacts.firstName}}</span>
+    <span>{{contacts.lastName}}</span>
+    <span>{{contacts.email}}</span>
+    <span>{{contacts.contact}}</span>
+    <span>{{contacts.address}}</span>
+    <span>{{contacts.city}}</span>
+<span>{{contacts.state}}</span>
+<span>{{contacts.pincode}}</span>
+
+  </div>
+  
+  <div>
+    <div class="contacts-row-action">
+      <a (click)="deleteContact(contacts.id)"><i class="fa-sharp fa-solid fa-trash"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
